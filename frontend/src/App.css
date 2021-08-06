@@ -1,0 +1,8 @@
+body {
+  text-align: center;
+  font-style: oblique;
+}
+
+.img:hover{
+  width: 500px;
+}
