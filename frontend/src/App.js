@@ -75,6 +75,21 @@ const handleNewCarFormSubmit = (event)=>{
   })
 }
 
+// to be able to delete a car
+const handleDeleteCar =(carData)=>{
+  axios
+      .delete(`http://localhost:3000/cars/${carData._id}`)
+      .then(()=>{
+        axios
+            .get('http://localhost:3000/cars')
+            .then((response)=>{
+              setCars(response.data)
+            })
+      })
+
+}
+
+
 
 
 return(
@@ -115,7 +130,7 @@ return(
                       <h3>year: {car.year}</h3>
                       <h4>Price: ${car.price}</h4>
                       <h5>Mileage: {car.mileage}</h5>
-                      <input type="submit" value="Delete" /> <br/> <br/><br/><br/>
+                      <input type="submit" onClick={(event)=>{handleDeleteCar(car)}} value="Delete" /> <br/> <br/><br/><br/>
 
 
                   </div>
