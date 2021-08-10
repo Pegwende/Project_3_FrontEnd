@@ -86,7 +86,29 @@ const handleDeleteCar =(carData)=>{
               setCars(response.data)
             })
       })
+}
 
+const handleEdit=(event, carData)=>{
+  event.preventDefault()
+  axios
+      .put(
+        `http://localhost:3000/cars/${carData._id}`,
+        {
+          image: newImage,
+          make: newMake,
+          model: newModel,
+          year: newYear,
+          price: newPrice,
+          mileage: newMileage
+        }
+      )
+      .then(()=>{
+        axios
+            .get('http://localhost:3000/cars')
+            .then((response)=>{
+              setCars(response.data)
+            })
+      })
 }
 
 
@@ -115,14 +137,16 @@ return(
                       <img class="btn" src={car.image}/> <br/> <br/>
 
                       <details>
-                            <h2>Edit Car Listing</h2>
-                            Image: <input type="text"></input> <br/>
-                            Make: <input type="text"></input> <br/>
-                            Model: <input type="text"></input> <br/>
-                            Year: <input type="text"></input><br/>
-                            Price: <input type="text"></input><br/>
-                            Mileage: <input type="text"></input><br/> <br/>
-                            <input type="Submit" value="Submit"></input><br/>
+                            <summary>Edit</summary>
+                            <form onSubmit={(event)=>{handleEdit(event, car)}}>
+                                Image: <input type="text" onChange={handleImageChange}></input> <br/>
+                                Make: <input type="text" onChange={handleMakeChange}></input> <br/>
+                                Model: <input type="text" onChange={handleModelChange}></input> <br/>
+                                Year: <input type="text" onChange={handleYearChange}></input><br/>
+                                Price: <input type="text" onChange={handlePriceChange}></input><br/>
+                                Mileage: <input type="text" onChange={handleMileageChange}></input><br/>
+                                <input type="Submit" value="Submit"></input><br/>
+                            </form>
                       </details>
 
                       <h1>{car.make}</h1>
