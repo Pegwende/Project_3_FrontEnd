@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+  font-style: oblique;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.modalBackground{
+  text-align: center;
+  background-color: rgba(200, 200, 200);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img:hover{
+  width: 500px;
+}
+
+.imgM{
+  width: 500px;
+  height: 600px;
+}
