@@ -149,7 +149,7 @@ return(
           </form> <br/> <br/> <br/>
       </div>
 
-      <div class="resulBody">
+      <div class="resultBody">
             {
               cars.map((car)=>{
                 return(
