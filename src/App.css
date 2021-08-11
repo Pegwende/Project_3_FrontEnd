@@ -12,26 +12,32 @@ body {
   background-color:rgba(255, 0 ,0 ,0.6);
   border-radius: 0px 100px 0px 100px;
 }
+
 .header h1{
   padding: 10px 0;
-
   text-align: center;
 }
 
 
 .addBox{
+  margin-top: 20px;
   background-color: grey;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 50%;
   border-radius: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+  border: 10px solid rgba(255, 0 ,0 ,0.6);
+}
+
+.addBox input{
+  width: 50%;
 }
 
 .addBox h2{
   padding-top: 30px;
-  color: green;
+  font-size: 30px;
 }
 
 .btn{
@@ -53,24 +59,95 @@ spam{
 }
 
 
-.resultBox{
-
-}
-.resultBox img{
-
+.editBox{
+  margin: 15px auto;
 }
 
-.modalBackground{
+.editBox input{
+  font-size: 15px;
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  margin: auto;
+  padding: auto;
+}
+
+.editBox .btn{
+  width: 100px;
   text-align: center;
-  background-color: rgba(200, 200, 200);
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.img:hover{
-  width: 500px;
+
+.resultBox{
+  padding: 10px 0;
+  text-align: center;
+  background-color:rgba(255, 0 ,0 ,0.6);
+  margin:70px auto;
+  width: 60%;
+  height: 50%;
+  border-radius: 50px;
+  transition-timing-function: cubic-bezier();
+  border: 10px solid grey;
+}
+
+.resultBox:hover{
+  transform: rotate(360deg);
+  transform-origin: top;
+  transform-origin: bottom;
+  background-color: red;
+  width: 80%;
+}
+
+
+.resultBox img{
+  width: 80%;
+  border-radius: 20px;
+
+}
+
+footer{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255, 0 ,0 ,0.6);
+  height: 70px;
+  width: 100%;
+  border: 10px solid grey;
+
+}
+
+footer h3{
+  text-align: center;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+
+@media only screen and (min-width: 700px) {
+
+#resulBody{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.resultBox{
+  padding: 10px 0;
+  text-align: center;
+  background-color:rgba(255, 0 ,0 ,0.6);
+  margin:10px auto;
+  width: 28%;
+  height: auto;
+  border-radius: 50px;
+  transition: 1s;
+}
+
+.resultBox:hover{
+transform: rotateX(10deg);
+transform: rotateZ(10deg);
+transform: rotateX(10deg);
+  background-color: red;
+  width: 35%;
+}
+
+
+
 }

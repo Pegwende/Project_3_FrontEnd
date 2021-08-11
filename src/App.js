@@ -150,6 +150,7 @@ return(
       </div>
 
       <div class="resultBody">
+
             {
               cars.map((car)=>{
                 return(
@@ -170,12 +171,16 @@ return(
                       </details>
                       <img src={car.image}/>
                       <h3>year: {car.year}</h3>
-                      <h4>Price: ${car.price}</h4>
-                      <h5>Mileage: {car.mileage}</h5>
+                      <h2>Price: ${car.price}</h2>
+                      <h4>Mileage: {car.mileage}</h4>
                       <input class="btn" type="submit" onClick={(event)=>{handleDeleteCar(car)}} value="Delete" /> <br/> <br/><br/><br/>
                   </div>
                 )})
             }
+            <footer>
+                <h3><spam>Phone Number:</spam> 111-111-1111</h3>
+                <h3><spam>Address:</spam> 333 street st, City, State, 77777</h3>
+            </footer>
       </div>
     </div>
 
