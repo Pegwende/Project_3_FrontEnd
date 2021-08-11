@@ -1,7 +1,63 @@
 body {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdDfig5EMXyCzIC7KnRNLARx_PfdL3ap1yeA&usqp=CAU);
   text-align: center;
   font-style: oblique;
   font-family: 'Montserrat', sans-serif;
+}
+
+.header{
+  border: 10px solid grey;
+  height: 100px;
+  text-align: center;
+  background-color:rgba(255, 0 ,0 ,0.6);
+  border-radius: 0px 100px 0px 100px;
+}
+.header h1{
+  padding: 10px 0;
+
+  text-align: center;
+}
+
+
+.addBox{
+  background-color: grey;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border-radius: 50px;
+  margin-bottom: 100px;
+}
+
+.addBox h2{
+  padding-top: 30px;
+  color: green;
+}
+
+.btn{
+  background-color: green;
+  border-radius: 50px;
+  width: 150px;
+  height: 30px;
+}
+
+spam{
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.addBox input{
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+
+.resultBox{
+
+}
+.resultBox img{
+
 }
 
 .modalBackground{
@@ -17,9 +73,4 @@ body {
 
 .img:hover{
   width: 500px;
-}
-
-.imgM{
-  width: 500px;
-  height: 600px;
 }

@@ -130,29 +130,33 @@ const handleEdit=(event, carData)=>{
 
 return(
   <>
-  <h1> Car Dealership Website</h1>
+  <div class="container">
 
-      <form onSubmit={handleNewCarFormSubmit}>
-            <h2>Add a New Car</h2>
-            Image: <input type="text" value={newImage} onChange={handleImageChange}></input> <br/>
-            Make: <input type="text" value={newMake} onChange={handleMakeChange}></input> <br/>
-            Model: <input type="text" value={newModel} onChange={handleModelChange}></input> <br/>
-            Year: <input type="text" value={newYear} onChange={ handleYearChange}></input><br/>
-            Price: <input type="text" value={newPrice} onChange={ handlePriceChange}></input><br/>
-            Mileage: <input type="text" value={newMileage} onChange={ handleMileageChange} ></input><br/> <br/>
-            <input type="Submit" value="Submit"></input><br/>
+      <div class="header">
+        <h1> Car Dealership Website</h1>
+      </div>
 
+      <div class="addBox">
+          <form onSubmit={handleNewCarFormSubmit}>
+                <h2>Add a New Car</h2>
+                <spam>Image:</spam> <input type="text" value={newImage} onChange={handleImageChange}></input> <br/>
+                <spam>Make:</spam> <input type="text" value={newMake} onChange={handleMakeChange}></input> <br/>
+                <spam>Model:</spam> <input type="text" value={newModel} onChange={handleModelChange}></input> <br/>
+                <spam>Year:</spam> <input type="text" value={newYear} onChange={ handleYearChange}></input><br/>
+                <spam>Price:</spam> <input type="text" value={newPrice} onChange={ handlePriceChange}></input><br/>
+                <spam>Mileage:</spam> <input type="text" value={newMileage} onChange={ handleMileageChange} ></input><br/> <br/>
+                <input class="btn" type="Submit" value="Submit"></input><br/>
+          </form> <br/> <br/> <br/>
+      </div>
 
-      </form> <br/> <br/> <br/>
-      <div>
+      <div class="resulBody">
             {
               cars.map((car)=>{
                 return(
-                  <div>
-
-                      <img class="btn" src={car.image}/> <br/> <br/>
-
-                      <details>
+                  <div class="resultBox">
+                      <h1>{car.make}</h1>
+                      <h2>{car.model}</h2>
+                      <details class="editBox">
                             <summary>Edit</summary>
                             <form onSubmit={(event)=>{handleEdit(event, car)}} key={car._id}>
                                 Image: <input type="text" value={newImage} onChange={handleImageChange} placeholder={car.image}></input> <br/>
@@ -161,25 +165,19 @@ return(
                                 Year: <input type="text" value={newYear} onChange={handleYearChange} placeholder={car.year}></input><br/>
                                 Price: <input type="text" value={newPrice} onChange={handlePriceChange} placeholder={car.price}></input><br/>
                                 Mileage: <input type="text" value={newMileage} onChange={handleMileageChange} placeholder={car.mileage}></input><br/>
-                                <input type="Submit" value="Submit"></input><br/>
+                                <input type="Submit" class="btn" value="Submit"></input><br/>
                             </form>
                       </details>
-
-                      <h1>{car.make}</h1>
-                      <h2>{car.model}</h2>
+                      <img src={car.image}/>
                       <h3>year: {car.year}</h3>
                       <h4>Price: ${car.price}</h4>
                       <h5>Mileage: {car.mileage}</h5>
-                      <input type="submit" onClick={(event)=>{handleDeleteCar(car)}} value="Delete" /> <br/> <br/><br/><br/>
-
-
+                      <input class="btn" type="submit" onClick={(event)=>{handleDeleteCar(car)}} value="Delete" /> <br/> <br/><br/><br/>
                   </div>
-
-                )
-
-              })
+                )})
             }
       </div>
+    </div>
 
   </>
 )
