@@ -18,7 +18,7 @@ const [newMileage, setNewMileage] = useState('')
 
   useEffect(()=>{
     axios
-        .get("http://localhost:3000/cars")
+        .get("https://cardealershipbackend.herokuapp.com/cars")
         .then((response)=>{
           setCars(response.data)
         })
@@ -68,7 +68,7 @@ const resetYear=()=>{
 const handleNewCarFormSubmit = (event)=>{
   event.preventDefault()
   axios.post(
-    "http://localhost:3000/cars",
+    "https://cardealershipbackend.herokuapp.com/cars",
     {
       image: newImage,
       make: newMake,
@@ -80,7 +80,7 @@ const handleNewCarFormSubmit = (event)=>{
     }
   ).then(()=>{
     axios
-        .get("http://localhost:3000/cars")
+        .get("https://cardealershipbackend.herokuapp.com/cars")
         .then((response)=>{
           setCars(response.data)
         })
@@ -91,10 +91,10 @@ const handleNewCarFormSubmit = (event)=>{
 // to be able to delete a car
 const handleDeleteCar =(carData)=>{
   axios
-      .delete(`http://localhost:3000/cars/${carData._id}`)
+      .delete(`https://cardealershipbackend.herokuapp.com/cars/${carData._id}`)
       .then(()=>{
         axios
-            .get('http://localhost:3000/cars')
+            .get('https://cardealershipbackend.herokuapp.com/cars')
             .then((response)=>{
               setCars(response.data)
             })
@@ -105,7 +105,7 @@ const handleEdit=(event, carData)=>{
   event.preventDefault()
   axios
       .put(
-        `http://localhost:3000/cars/${carData._id}`,
+        `https://cardealershipbackend.herokuapp.com/cars/${carData._id}`,
         {
           image: newImage,
           make: newMake,
@@ -117,7 +117,7 @@ const handleEdit=(event, carData)=>{
       )
       .then(()=>{
         axios
-            .get('http://localhost:3000/cars')
+            .get('https://cardealershipbackend.herokuapp.com/cars')
             .then((response)=>{
               setCars(response.data)
             })
@@ -149,7 +149,8 @@ return(
           </form> <br/> <br/> <br/>
       </div>
 
-      <div id="resulBody">
+      <div class="resultBody">
+
             {
               cars.map((car)=>{
                 return(
