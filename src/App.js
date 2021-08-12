@@ -205,7 +205,9 @@ return(
   <div class="container">
 
       <div class="header">
-        <h1>Car Dealership Website</h1>
+        <div class="headter-text">
+          <h1>My Car Dealership Website</h1>
+        </div>
 
         <div class="login">
           <form onSubmit={handleLogin}>
@@ -216,7 +218,7 @@ return(
         </div>
       </div>
 
-      <div>
+      <div class="row">
         <div class="addBox">
           <form onSubmit={handleNewCarFormSubmit}>
                 <h2>Add a New Car</h2>
@@ -234,7 +236,7 @@ return(
           <form onSubmit={handleNewUserFormSubmit}>
             <h2>Sign Up</h2>
             <label for="username">Username: </label><input type="text" value={newUsername} onChange={handleUsernameChange} /> <br/>
-            <label for="password">Password: </label><input type="password" value="{newpassword" onChange={handlePasswordChange} /> <br/>
+            <label for="password">Password: </label><input type="password" value={newPassword} onChange={handlePasswordChange} /> <br/>
             <input class="btn" type="Submit" value="Submit" />
           </form>
         </div>

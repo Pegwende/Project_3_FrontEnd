@@ -18,6 +18,10 @@ body {
   text-align: center;
 }
 
+.header-text {
+  display: block;
+}
+
 .addBox, .signupBox {
   margin-top: 20px;
   background-color: grey;
@@ -43,6 +47,16 @@ body {
 .signupBox {
   width: 40%;
 
+}
+
+.row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .btn{
@@ -85,6 +99,7 @@ spam{
 .login {
   width: 300px;
   align-items: center;
+  float: right;
 }
 .login input {
   width: 100px;
