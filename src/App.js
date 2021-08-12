@@ -205,7 +205,7 @@ return(
 
       <div class="header">
         <div class="headter-text">
-          <h1>Car Dealership Website *</h1>
+          <span class="h1">Car Dealership Website *</span>
         </div>
 
         <div class="login">
@@ -271,8 +271,8 @@ return(
             }
         </div>
             <footer>
-                <h3><spam>Phone Number:</spam> 111-111-1111</h3>
-                <h3><spam>Address:</spam> 333 street st, City, State, 77777</h3>
+                <h3><span>Phone Number:</span> 111-111-1111</h3>
+                <h3><span>Address:</span> 333 street st, City, State, 77777</h3>
             </footer>
 
     </div>
