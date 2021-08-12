@@ -23,8 +23,7 @@ body {
   margin-top: 20px;
   background-color: grey;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  float: left;
   width: 50%;
   border-radius: 50px;
   margin-bottom: 50px;
@@ -38,6 +37,18 @@ body {
 .addBox h2{
   padding-top: 30px;
   font-size: 30px;
+}
+
+.signupBox {
+  margin-top: 20px;
+  background-color: grey;
+  display: block;
+  float: left;
+  width: 40%;
+  border-radius: 50px;
+  margin-bottom: 50px;
+  border: 10px solid rgba(255, 0 ,0 ,0.6);
+
 }
 
 .btn{

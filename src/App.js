@@ -16,6 +16,9 @@ const [newYear, setNewYear] = useState('')
 const [newPrice, setNewPrice] = useState('')
 const [newMileage, setNewMileage] = useState('')
 
+const [newUsername, setNewUsername] = useState('')
+const [newPassword, setNewPassword] = useState('')
+
   useEffect(()=>{
     axios
         .get("https://cardealershipbackend.herokuapp.com/cars")
@@ -49,6 +52,14 @@ const handlePriceChange =(event)=>{
 
 const handleMileageChange =(event)=>{
   setNewMileage(event.target.value)
+}
+
+const handleUsernameChange =(event)=>{
+  setNewUsername(event.target.value)
+}
+
+const handlePasswordChange =(event)=>{
+  setNewPassword(event.target.value)
 }
 
 const resetState=()=>{
@@ -126,7 +137,32 @@ const handleEdit=(event, carData)=>{
 }
 
 
+// for user signup
+const resetSignup = () => {
+  setNewUsername('')
+  setNewPassword('')
+}
 
+const handleNewUserFormSubmit = (event)=>{
+  event.preventDefault()
+  axios.post(
+    "https://cardealershipbackend.herokuapp.com/cars",
+    {
+      username: newUsername,
+      password: newPassword
+
+    }
+  ).then(()=>{
+    /*
+    axios
+        .get("https://cardealershipbackend.herokuapp.com/cars")
+        .then((response)=>{
+          setCars(response.data)
+        })
+        */
+  })
+  resetSignup()
+}
 
 return(
   <>
@@ -139,14 +175,22 @@ return(
       <div class="addBox">
           <form onSubmit={handleNewCarFormSubmit}>
                 <h2>Add a New Car</h2>
-                <spam>Image:</spam> <input type="text" value={newImage} onChange={handleImageChange}></input> <br/>
-                <spam>Make:</spam> <input type="text" value={newMake} onChange={handleMakeChange}></input> <br/>
-                <spam>Model:</spam> <input type="text" value={newModel} onChange={handleModelChange}></input> <br/>
-                <spam>Year:</spam> <input type="text" value={newYear} onChange={ handleYearChange}></input><br/>
-                <spam>Price:</spam> <input type="text" value={newPrice} onChange={ handlePriceChange}></input><br/>
-                <spam>Mileage:</spam> <input type="text" value={newMileage} onChange={ handleMileageChange} ></input><br/> <br/>
+                <span>Image:</span> <input type="text" value={newImage} onChange={handleImageChange}></input> <br/>
+                <span>Make:</span> <input type="text" value={newMake} onChange={handleMakeChange}></input> <br/>
+                <span>Model:</span> <input type="text" value={newModel} onChange={handleModelChange}></input> <br/>
+                <span>Year:</span> <input type="text" value={newYear} onChange={ handleYearChange}></input><br/>
+                <span>Price:</span> <input type="text" value={newPrice} onChange={ handlePriceChange}></input><br/>
+                <span>Mileage:</span> <input type="text" value={newMileage} onChange={ handleMileageChange} ></input><br/> <br/>
                 <input class="btn" type="Submit" value="Submit"></input><br/>
           </form> <br/> <br/> <br/>
+      </div>
+      <div class="signupBox">
+        <form onSubmit={handleNewUserFormSubmit}>
+          <h2>Sign Up</h2>
+          <label for="username">Username: </label><input type="text" value={newUsername} onChange={handleUsernameChange} /> <br/>
+          <label for="password">Password: </label><input type="password" value="{newpassword" onChange={handlePasswordChange} /> <br/>
+          <input class="btn" type="Submit" value="Submit" />
+        </form>
       </div>
 
       <div id="resultBody">
