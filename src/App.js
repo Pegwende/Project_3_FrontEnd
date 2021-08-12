@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import axios from 'axios'
 import './App.css';
 import {useState, useEffect} from 'react'
@@ -204,21 +203,21 @@ return(
   <div class="container">
 
       <div class="header">
-        <div class="headter-text">
-          <span class="h1">Car Dealership Website</span>
-        </div>
+        <span class="h1">Car Dealership Website</span>
 
-        <div class="login">
-          <form onSubmit={handleLogin}>
-            <label for="uname">Username</label> <input type="text" value={username} onChange={usernameChange} /><br/>
-            <label for="pword">Password</label> <input type="password" value={password} onChange={passwordChange} /><br/>
-            <input type="submit" value="Login" />
-          </form>
-        </div>
+        {isAuthorized ? "" : 
+          <div class="login">
+            <form onSubmit={handleLogin}>
+              <label for="uname">Username</label> <input type="text" value={username} onChange={usernameChange} /><br/>
+              <label for="pword">Password</label> <input type="password" value={password} onChange={passwordChange} /><br/>
+              <input type="submit" value="Login" />
+            </form>
+          </div>
+        }
       </div>
 
       <div class="row">
-        <div class="addBox">
+        <div class={isAuthorized ? "addBox center" : "addBox left"}>
           <form onSubmit={handleNewCarFormSubmit}>
                 <h2>Add a New Car</h2>
                 <span>Image:</span> <input type="text" value={newImage} onChange={handleImageChange}></input> <br/>
@@ -231,14 +230,16 @@ return(
           </form> <br/> <br/> <br/>
         </div>
 
-        <div class="signupBox">
-          <form onSubmit={handleNewUserFormSubmit}>
-            <h2>Sign Up</h2>
-            <label for="username">Username: </label><input type="text" value={newUsername} onChange={handleUsernameChange} /> <br/>
-            <label for="password">Password: </label><input type="password" value={newPassword} onChange={handlePasswordChange} /> <br/>
-            <input class="btn" type="Submit" value="Submit" />
-          </form>
-        </div>
+        {isAuthorized ? "" : 
+          <div class="signupBox left">
+            <form onSubmit={handleNewUserFormSubmit}>
+              <h2>Sign Up</h2>
+              <label for="username">Username: </label><input type="text" value={newUsername} onChange={handleUsernameChange} /> <br/>
+              <label for="password">Password: </label><input type="password" value={newPassword} onChange={handlePasswordChange} /> <br/>
+              <input class="btn" type="Submit" value="Submit" />
+            </form>
+          </div>
+        }
       </div>
 
       <div id="resultBody">

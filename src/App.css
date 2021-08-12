@@ -7,29 +7,25 @@ body {
 
 .header{
   border: 10px solid grey;
-  height: 100px;
+  height: 110px;
+  line-height: 110px;
   text-align: center;
   align-items: center;
   background-color:rgba(255, 0 ,0 ,0.6);
   border-radius: 0px 100px 0px 100px;
 }
 
-.header h1{
-  padding: 10px 0;
-  text-align: center;
+.header .h1{
   display: inline-block;
-}
-
-.header-text {
-  display: block;
-  float: left;
+  vertical-align: middle;
+  line-height: normal;
+  font-size: 36px;
 }
 
 .addBox, .signupBox {
   margin-top: 20px;
   background-color: grey;
   display: block;
-  float: left;
   margin-left: 25px;;
   border-radius: 50px;
   margin-bottom: 50px;
@@ -82,6 +78,13 @@ span{
   border-radius: 20px;
 }
 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.left {
+  float: left;
+}
 
 .editBox{
   margin: 15px auto;
@@ -102,12 +105,17 @@ span{
 }
 
 .login {
+  height: 100px;
   width: 300px;
+  margin-top: 5px;
+  margin-right: 50px;
   align-items: center;
   float: right;
+  line-height: normal;
 }
 .login input {
   width: 150px;
+  margin-bottom: 5px;
 }
 
 
