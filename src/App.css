@@ -28,7 +28,6 @@ body {
 
 }
 .addBox{
-  float: left;
   width: 50%;
 }
 
@@ -42,7 +41,6 @@ body {
 }
 
 .signupBox {
-  float: right;
   width: 40%;
 
 }
