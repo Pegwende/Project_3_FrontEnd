@@ -15,9 +15,13 @@ const [newModel, setNewModel] = useState('')
 const [newYear, setNewYear] = useState('')
 const [newPrice, setNewPrice] = useState('')
 const [newMileage, setNewMileage] = useState('')
-
+// signup
 const [newUsername, setNewUsername] = useState('')
 const [newPassword, setNewPassword] = useState('')
+//// login
+const [username, setUsername] = useState('')
+const [password, setPassword] = useState('')
+const [isAuthorized, setAuthorized] = useState(false)
 
   useEffect(()=>{
     axios
@@ -54,12 +58,22 @@ const handleMileageChange =(event)=>{
   setNewMileage(event.target.value)
 }
 
+// signup
 const handleUsernameChange =(event)=>{
   setNewUsername(event.target.value)
 }
 
 const handlePasswordChange =(event)=>{
   setNewPassword(event.target.value)
+}
+
+// login
+const usernameChange = (event) => {
+  setUsername(event.target.value)
+}
+
+const passwordChange = (event) => {
+  setPassword(event.target.value)
 }
 
 const resetState=()=>{
@@ -164,12 +178,42 @@ const handleNewUserFormSubmit = (event)=>{
   resetSignup()
 }
 
+// for login
+
+const handleLogin=(event, userData)=>{
+  event.preventDefault()
+  axios
+      .put(
+        `https://cardealershipbackend.herokuapp.com/cars/${userData._id}`,
+        {
+          username: username,
+          password: password
+        }
+      )
+      .then(()=>{
+        axios
+            .get('https://cardealershipbackend.herokuapp.com/cars')
+            .then((response)=>{
+              setAuthorized(response.data)
+            })
+      })
+      resetState()
+}
+
 return(
   <>
   <div class="container">
 
       <div class="header">
         <h1>Car Dealership Website</h1>
+
+        <div class="login">
+          <form onSubmit={handleLogin}>
+            <label for="uname">Username</label> <input type="text" value={username} onChange={usernameChange} /><br/>
+            <label for="pword">Password</label> <input type="password" value={password} onChange={passwordChange} /><br/>
+            <input type="submit" value="Login" />
+          </form>
+        </div>
       </div>
 
       <div class="addBox">

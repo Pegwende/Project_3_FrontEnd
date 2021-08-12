@@ -18,16 +18,18 @@ body {
   text-align: center;
 }
 
-
-.addBox{
+.addBox, .signupBox {
   margin-top: 20px;
   background-color: grey;
   display: block;
-  float: left;
-  width: 50%;
   border-radius: 50px;
   margin-bottom: 50px;
   border: 10px solid rgba(255, 0 ,0 ,0.6);
+
+}
+.addBox{
+  float: left;
+  width: 50%;
 }
 
 .addBox input{
@@ -40,14 +42,8 @@ body {
 }
 
 .signupBox {
-  margin-top: 20px;
-  background-color: grey;
-  display: block;
-  float: left;
+  float: right;
   width: 40%;
-  border-radius: 50px;
-  margin-bottom: 50px;
-  border: 10px solid rgba(255, 0 ,0 ,0.6);
 
 }
 
@@ -64,7 +60,7 @@ spam{
   text-decoration: underline;
 }
 
-.addBox input{
+.addBox input, .signupBox input, .login input{
   font-size: 20px;
   border-radius: 20px;
 }
@@ -86,6 +82,14 @@ spam{
 .editBox .btn{
   width: 100px;
   text-align: center;
+}
+
+.login {
+  width: 300px;
+  align-items: center;
+}
+.login input {
+  width: 100px;
 }
 
 
