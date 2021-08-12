@@ -160,20 +160,19 @@ const resetSignup = () => {
 const handleNewUserFormSubmit = (event)=>{
   event.preventDefault()
   axios.post(
-    "https://cardealershipbackend.herokuapp.com/cars",
+    "https://cardealershipbackend.herokuapp.com/users",
     {
       username: newUsername,
       password: newPassword
-
     }
   ).then(()=>{
-    /*
+    
     axios
-        .get("https://cardealershipbackend.herokuapp.com/cars")
+        .get("https://cardealershipbackend.herokuapp.com/users")
         .then((response)=>{
-          setCars(response.data)
+          alert(response.data)
         })
-        */
+        
   })
   resetSignup()
 }

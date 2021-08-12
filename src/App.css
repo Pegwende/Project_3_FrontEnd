@@ -16,6 +16,7 @@ body {
 .header h1{
   padding: 10px 0;
   text-align: center;
+  display: inline-block;
 }
 
 .header-text {
@@ -26,6 +27,8 @@ body {
   margin-top: 20px;
   background-color: grey;
   display: block;
+  float: left;
+  margin-left: 25px;;
   border-radius: 50px;
   margin-bottom: 50px;
   border: 10px solid rgba(255, 0 ,0 ,0.6);
