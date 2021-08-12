@@ -177,11 +177,12 @@ return(
                   </div>
                 )})
             }
+        </div>
             <footer>
                 <h3><spam>Phone Number:</spam> 111-111-1111</h3>
                 <h3><spam>Address:</spam> 333 street st, City, State, 77777</h3>
             </footer>
-      </div>
+
     </div>
 
   </>
