@@ -216,7 +216,8 @@ return(
         </div>
       </div>
 
-      <div class="addBox">
+      <div>
+        <div class="addBox">
           <form onSubmit={handleNewCarFormSubmit}>
                 <h2>Add a New Car</h2>
                 <span>Image:</span> <input type="text" value={newImage} onChange={handleImageChange}></input> <br/>
@@ -227,14 +228,16 @@ return(
                 <span>Mileage:</span> <input type="text" value={newMileage} onChange={ handleMileageChange} ></input><br/> <br/>
                 <input class="btn" type="Submit" value="Submit"></input><br/>
           </form> <br/> <br/> <br/>
-      </div>
-      <div class="signupBox">
-        <form onSubmit={handleNewUserFormSubmit}>
-          <h2>Sign Up</h2>
-          <label for="username">Username: </label><input type="text" value={newUsername} onChange={handleUsernameChange} /> <br/>
-          <label for="password">Password: </label><input type="password" value="{newpassword" onChange={handlePasswordChange} /> <br/>
-          <input class="btn" type="Submit" value="Submit" />
-        </form>
+        </div>
+
+        <div class="signupBox">
+          <form onSubmit={handleNewUserFormSubmit}>
+            <h2>Sign Up</h2>
+            <label for="username">Username: </label><input type="text" value={newUsername} onChange={handleUsernameChange} /> <br/>
+            <label for="password">Password: </label><input type="password" value="{newpassword" onChange={handlePasswordChange} /> <br/>
+            <input class="btn" type="Submit" value="Submit" />
+          </form>
+        </div>
       </div>
 
       <div id="resultBody">
