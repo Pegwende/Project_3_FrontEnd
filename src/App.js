@@ -205,7 +205,7 @@ return(
 
       <div class="header">
         <div class="headter-text">
-          <h1>My Car Dealership Website *</h1>
+          <h1>My Car Dealership Website</h1>
         </div>
 
         <div class="login">
