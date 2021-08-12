@@ -169,7 +169,7 @@ return(
   <div class="container">
 
       <div class="header">
-        <h1>This is My Car Dealership Website</h1>
+        <h1>Car Dealership Website</h1>
       </div>
 
       <div class="addBox">
