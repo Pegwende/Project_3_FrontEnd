@@ -183,7 +183,7 @@ const handleLogin=(event, userData)=>{
   event.preventDefault()
   axios
       .put(
-        `https://cardealershipbackend.herokuapp.com/cars/${userData._id}`,
+        `https://cardealershipbackend.herokuapp.com/users/${userData._id}`,
         {
           username: username,
           password: password
@@ -191,7 +191,7 @@ const handleLogin=(event, userData)=>{
       )
       .then(()=>{
         axios
-            .get('https://cardealershipbackend.herokuapp.com/cars')
+            .get('https://cardealershipbackend.herokuapp.com/users')
             .then((response)=>{
               setAuthorized(response.data)
             })
