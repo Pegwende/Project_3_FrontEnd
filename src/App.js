@@ -158,20 +158,22 @@ const resetSignup = () => {
 
 const handleNewUserFormSubmit = (event)=>{
   event.preventDefault()
+  console.log('processing...')
   axios.post(
-    "https://cardealershipbackend.herokuapp.com/users",
+    "https://cardealershipbackend.herokuapp.com/users/create",
     {
       username: newUsername,
       password: newPassword
     }
   ).then(()=>{
-    
+    console.log("user created successfully")
+    /*
     axios
         .get("https://cardealershipbackend.herokuapp.com/users")
         .then((response)=>{
           alert(response.data)
         })
-        
+        */
   })
   resetSignup()
 }
@@ -182,7 +184,7 @@ const handleLogin=(event, userData)=>{
   event.preventDefault()
   axios
       .put(
-        'https://cardealershipbackend.herokuapp.com/users',
+        `https://cardealershipbackend.herokuapp.com/users/${userData._id}`,
         {
           username: username,
           password: password
