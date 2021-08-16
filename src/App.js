@@ -160,7 +160,7 @@ const handleNewUserFormSubmit = (event)=>{
   event.preventDefault()
   console.log('processing...')
   axios.post(
-    "https://cardealershipbackend.herokuapp.com/users/create",
+    "https://cardealershipbackend.herokuapp.com/users/",
     {
       username: newUsername,
       password: newPassword
