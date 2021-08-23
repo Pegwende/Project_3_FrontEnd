@@ -73,13 +73,15 @@ span{
   text-decoration: underline;
 }
 
-.addBox input, .signupBox input, .login input{
+.addBox input, .signupBox input, .login input, button {
   font-size: 20px;
   border-radius: 20px;
   padding-left: 10px;
   padding-right: 10px;
 }
-
+.hidden {
+  display: none;
+}
 .center {
   margin-left: auto;
   margin-right: auto;
@@ -87,19 +89,22 @@ span{
 .left {
   float: left;
 }
-
+.right {
+  float: right;
+}
 .editBox{
   margin: 15px auto;
 }
 
 .editBox input{
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 15px;
   width: 50%;
   height: auto;
   border-radius: 10px;
   margin: auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: auto;
 }
 
 .editBox .btn{
@@ -116,9 +121,17 @@ span{
   float: right;
   line-height: normal;
 }
+.login input[type=submit], .login button {
+  width: 40%;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .login input {
   width: 150px;
   margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 
